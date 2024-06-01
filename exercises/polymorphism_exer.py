@@ -7,9 +7,12 @@ class Vehicle:
 
 
 class Car(Vehicle):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,doors_number,**kwargs):
+        super().__init__(**kwargs)
+        self.doors_number=doors_number
+        self.sun_roof = False
         self.fuel_type="Petrol"
+
 
 class Bicycle(Vehicle):
     pass
@@ -21,8 +24,13 @@ class Lamborghini(Car):
     pass
 
 class Benz(Car):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,model:str,**kwargs):
+        super().__init__(**kwargs)
+        self.model=model
+    def info(self):
+        print(
+            f"It's a {self.__class__.__name__} model {self.model}.\nIt has {self.number_of_wheel} wheels.\nMy fuel type is {self.fuel_type}."
+            f"\nNumber of doors are {self.doors_number}.")
 
-benz1 = Benz(4)
+benz1 = Benz("C200",number_of_wheel=4,doors_number=4)
 benz1.info()
