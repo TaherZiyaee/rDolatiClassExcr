@@ -20,7 +20,7 @@ class Shape:
     def __str__(self):
         return self.__class__.__name__
 
-
+# length, width
 class Rectangle(Shape):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -32,14 +32,38 @@ class Rectangle(Shape):
         self.perimeter = (self.length + self.width) * 2
 
 
-sh1 = Shape(name="circle", qotr=5)
+# length
+class Square(Shape):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
-# print(sh1.name)
-# print(sh1.__dict__)
+    def calculate_area(self):
+        self.area = self.length ** 2
 
-# sh1.show()
+    def calculate_perimeter(self):
+        self.perimeter = self.length * 4
 
-rec1 = Rectangle(length=3.4, width=6.5)
-rec1.calculate_area()
-rec1.calculate_perimeter()
-rec1.show()
+
+def main():
+    sh1 = Shape(name="circle", qotr=5)
+
+    # print(sh1.name)
+    # print(sh1.__dict__)
+
+    # sh1.show()
+
+    rec1 = Rectangle(length=3.4, width=6.5)
+    rec1.calculate_area()
+    rec1.calculate_perimeter()
+    rec1.show()
+
+    sqr1=Square(length=5)
+    sqr1.calculate_perimeter()
+    sqr1.calculate_area()
+    sqr1.show()
+
+if __name__ == "__main__":
+    main()
+
+
+
