@@ -17,16 +17,21 @@ class Color:
             raise ValueError(f"Invalid name {name!r}")
 
     name=property(_get_name,_set_name)
+    rgb=property(_get_rgb,_set_rgb)
 
 c1=Color(0x3374ff,"blue")
-print(c1.get_name())
-print(c1.get_rgb())
-c1.set_rgb(0x3374ff)
-c1.set_name("red")
-print(c1.get_name())
-print(c1.get_rgb())
+print(c1._get_name())
+print(c1._get_rgb())
+c1._set_rgb(0x3374ff)
+c1._set_name("red")
+print(c1._get_name())
+print(c1._get_rgb())
 
 print('-'*40)
 
 c2=Color(0x9c2de8,"purple")
 print(c2.name)
+c2.name="pink"
+c2.rgb=0xe77ed2
+print(c2.name)
+print(c2.rgb)
