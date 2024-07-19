@@ -46,7 +46,7 @@ class Order:
 
 
 class Seller(User):
-    def order(self, order: "Order"):
+    def order(self, order: "Order") -> None:
         print(f"\nHi {self.username},\n\tfrom your products, {order.number} {order.product_type}"
               f" was sold at {order.selling_date}.")
 
